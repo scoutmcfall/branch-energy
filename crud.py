@@ -1,7 +1,13 @@
 """CRUD operations for Branch Energy app. """
 
 from model import db, Record, connect_to_db
-
+#id updated at and created at for each record
+# dont turn off the lambda after each requrest, leave up for 2 min to handle butsts
+#optimize for reading  
+#remember to delete everything when you're done with it so you don't get a huge bill
+#make an endpoint in lambda that returns the number 1 when you hit it
+# postgres cuz of relationships and don't like storing duplicate data
+#rds(connect to rds via lambda tutorial)/aurora?
 
 def create_record():
     """Create a new record (eg new branchId on customer enrollment)"""

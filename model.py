@@ -4,9 +4,9 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class Record(db.Model):
-    """A record."""
-    __tablename__ = 'records'
+class Customer(db.Model):
+    """A customer."""
+    __tablename__ = 'customers'
 
     branch_id = db.Column(db.Integer,
                         autoincrement = True,
@@ -19,7 +19,7 @@ class Record(db.Model):
     
 
 
-def connect_to_db(flask_app, db_uri="postgresql:///space_weather", echo=True):
+def connect_to_db(somedatabase, db_uri="postgresql:///", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
     flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
